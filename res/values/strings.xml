@@ -3,5 +3,6 @@
 
     <string name="app_name">WiTQuiz</string>
     <string name="hello_world">Hello world!</string>
+    <string name="write_username">Nazwa użytkownika</string>
 
 </resources>

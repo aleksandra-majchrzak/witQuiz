@@ -4,11 +4,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:gravity="center"
     tools:context=".MainActivity" >
 
-    <TextView
+    <EditText
+        android:id="@+id/username_editText"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content" 
+        android:hint="@string/write_username">
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/start_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:layout_marginTop="10dp"
+        android:textSize="20dp"
+        android:text="START" />
 
 </LinearLayout>
