@@ -4,7 +4,6 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.os.Environment;
-import android.util.Log;
 
 public class DatabaseOpenHelper extends SQLiteOpenHelper{
 	
@@ -15,16 +14,7 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper{
 	public DatabaseOpenHelper(Context context) {
 		
 		super(context, DB_PATH + DB_NAME, null, DBVERSION);
-		
-		String dir1 = Environment.getDataDirectory().getAbsolutePath();
-		String dir2 = Environment.getExternalStorageDirectory().getAbsolutePath();
-		String dir3 = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS).getAbsolutePath();
-		String dir4 = Environment.getDownloadCacheDirectory().getAbsolutePath();
-		
-		Log.d("dir1", dir1);
-		Log.d("dir2", dir2);
-		Log.d("dir3", dir3);
-		Log.d("dir4", dir4);
+
 	}
 
 	@Override
