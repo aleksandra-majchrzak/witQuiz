@@ -43,5 +43,24 @@ public class MenuActivity extends Activity {
 				startActivity(intent);
 			}
 		});
+		
+		creatorButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+	
+				Intent intent = new Intent(MenuActivity.this, CreatorActivity.class);
+				startActivity(intent);
+			}
+		});
+
+		exitButton.setOnClickListener(new OnClickListener() {
+	
+			@Override
+			public void onClick(View v) {
+	
+				finish();
+			}
+		});
 	}
 }

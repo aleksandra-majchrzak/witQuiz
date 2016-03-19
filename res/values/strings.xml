@@ -14,5 +14,8 @@
     <string name="start_game">Rozpocznij grę</string>
     <string name="title_activity_best_scores">BestScoresActivity</string>
     <string name="title_activity_creator">CreatorActivity</string>
+    <string name="edit_category">Edytuj kategorię</string>
+    <string name="add_new_category">Dodaj nową kategorię</string>
+    <string name="next">Dalej</string>
 
 </resources>
