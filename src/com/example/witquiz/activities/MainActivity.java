@@ -1,4 +1,6 @@
-package com.example.witquiz;
+package com.example.witquiz.activities;
+
+import com.example.witquiz.R;
 
 import android.app.Activity;
 import android.content.Context;

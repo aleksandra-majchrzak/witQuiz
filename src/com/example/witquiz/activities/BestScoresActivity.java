@@ -1,16 +1,17 @@
-package com.example.witquiz;
+package com.example.witquiz.activities;
+
+import com.example.witquiz.R;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class NewGameActivity extends Activity {
+public class BestScoresActivity extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_new_game);
+		setContentView(R.layout.activity_best_scores);
 	}
-
 }
