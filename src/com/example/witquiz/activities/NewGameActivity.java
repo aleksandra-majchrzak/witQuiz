@@ -1,11 +1,20 @@
 package com.example.witquiz.activities;
 
 import com.example.witquiz.R;
+import com.example.witquiz.databasemanager.DatabaseManager;
+import com.example.witquiz.entities.Category;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.CursorAdapter;
+import android.widget.SimpleCursorAdapter;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 public class NewGameActivity extends Activity {
 
@@ -13,6 +22,50 @@ public class NewGameActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_new_game);
+		
+		loadControls();
+	}
+	
+	private void loadControls(){
+		
+		Spinner categorySpinner = (Spinner) findViewById(R.id.choose_category_spinner);
+		
+		Category[] categories = DatabaseManager.getAllCategories();
+		
+		categorySpinner.setAdapter(new ArrayAdapter<Category>(this, R.layout.simple_row, categories){
+			
+			@Override
+			public View getView(int position, View convertView, ViewGroup parent) {
+				
+				if(convertView == null){
+					convertView = NewGameActivity.this.getLayoutInflater()
+														.inflate(R.layout.simple_row, null);
+				}
+				
+				TextView categoryTextView = (TextView) convertView.findViewById(R.id.simple_row_textView);
+				
+				categoryTextView.setText(this.getItem(position).getName());
+				
+				return convertView;
+			}
+			
+			@Override
+			public View getDropDownView (int position, View convertView, ViewGroup parent){
+				
+				if(convertView == null){
+					convertView = NewGameActivity.this.getLayoutInflater()
+														.inflate(R.layout.simple_row, null);
+				}
+				
+				TextView categoryTextView = (TextView) convertView.findViewById(R.id.simple_row_textView);
+				
+				categoryTextView.setText(this.getItem(position).getName());
+				
+				return convertView;
+				
+			}
+			
+		});
 	}
 
 }

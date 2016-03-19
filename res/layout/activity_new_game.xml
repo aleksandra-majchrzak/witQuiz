@@ -9,7 +9,7 @@
     tools:context="com.example.witquiz.activities.NewGameActivity" >
 
     <Spinner
-        android:id="@+id/spinner1"
+        android:id="@+id/choose_category_spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"/>
