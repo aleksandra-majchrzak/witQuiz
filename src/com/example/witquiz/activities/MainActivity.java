@@ -1,13 +1,12 @@
 package com.example.witquiz.activities;
 
 import com.example.witquiz.R;
+import com.example.witquiz.databasemanager.DatabaseHelper;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.AttributeSet;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -23,6 +22,8 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         
         loadControls();
+        
+        setupDbEnv();
     }
     
     private void loadControls() {
@@ -48,4 +49,15 @@ public class MainActivity extends Activity {
     		
     	});
     }
+    
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        DatabaseHelper.close();
+    }
+    
+    private void setupDbEnv() {
+    	
+    	DatabaseHelper.setDatabaseManagerContext(this);
+    } 
 }
