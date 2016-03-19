@@ -34,5 +34,14 @@ public class MenuActivity extends Activity {
 			}
 		});
 		
+		bestScoresButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+			
+				Intent intent = new Intent(MenuActivity.this, BestScoresActivity.class);
+				startActivity(intent);
+			}
+		});
 	}
 }
