@@ -3,12 +3,45 @@
     android:id="@+id/LinearLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center"
     android:orientation="vertical"
     tools:context="${relativePackage}.${activityClass}" >
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/inner_ll"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/new_game_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="@string/new_game" />
+        
+        <!-- w przyszlosci mozna rozbubowac o mozliwosc kontynuacji starej gry  -->
+
+        <Button
+            android:id="@+id/best_scores_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="@string/best_scores" />
+        
+        <Button
+        	android:id="@+id/creator_button"
+        	android:layout_width="match_parent"
+        	android:layout_height="wrap_content"
+        	android:layout_marginBottom="5dp"
+       		android:text="@string/creator" />
+
+    	<Button
+        	android:id="@+id/exit_button"
+        	android:layout_width="match_parent"
+       		android:layout_height="wrap_content"
+        	android:text="@string/exit" />
+
+    </LinearLayout> 
 
 </LinearLayout>
