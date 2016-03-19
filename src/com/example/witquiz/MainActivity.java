@@ -23,7 +23,7 @@ public class MainActivity extends Activity {
         loadControls();
     }
     
-    public void loadControls() {
+    private void loadControls() {
     	
     	Button startButton = (Button) findViewById(R.id.start_button);
     	
