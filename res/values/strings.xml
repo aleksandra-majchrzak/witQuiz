@@ -17,5 +17,7 @@
     <string name="edit_category">Edytuj kategorię</string>
     <string name="add_new_category">Dodaj nową kategorię</string>
     <string name="next">Dalej</string>
+    <string name="confirm">Zatwierdź</string>
+    <string name="category">Kategoria</string>
 
 </resources>

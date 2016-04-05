@@ -5,14 +5,13 @@ import com.example.witquiz.databasemanager.DatabaseManager;
 import com.example.witquiz.entities.Category;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.CursorAdapter;
-import android.widget.SimpleCursorAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
@@ -28,7 +27,7 @@ public class NewGameActivity extends Activity {
 	
 	private void loadControls(){
 		
-		Spinner categorySpinner = (Spinner) findViewById(R.id.choose_category_spinner);
+		final Spinner categorySpinner = (Spinner) findViewById(R.id.choose_category_spinner);
 		
 		Category[] categories = DatabaseManager.getAllCategories();
 		
@@ -65,6 +64,22 @@ public class NewGameActivity extends Activity {
 				
 			}
 			
+		});
+		
+		Button startGameButton = (Button) findViewById(R.id.start_game_button);
+		
+		startGameButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+			
+				Category selectedCategory = (Category) categorySpinner.getSelectedItem();
+				
+				Intent intent = new Intent(NewGameActivity.this, QuestionActivity.class);
+				intent.putExtra("CategoryId", selectedCategory.getId());
+				startActivity(intent);
+				
+			}
 		});
 	}
 

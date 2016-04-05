@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"/>
 
-    <Button android:id="@+id/Button1"
+    <Button android:id="@+id/start_game_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/start_game" />

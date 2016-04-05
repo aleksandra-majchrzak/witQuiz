@@ -1,0 +1,129 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android1="http://schemas.android.com/apk/res/android"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="30dp"
+    android:layout_marginRight="30dp"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context="com.example.witquiz.QuestionActivity$PlaceholderFragment" >
+
+    <LinearLayout
+        android:id="@+id/question_top_ll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp" 
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/category_name_textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:gravity="left"
+            android:text="@string/category"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <TextView
+            android:id="@+id/question_number_textView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:gravity="right"
+            android:text="Pytanie nr 1"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+    </LinearLayout>
+
+    <LinearLayout
+        android1:id="@+id/central_ll"
+        android1:layout_width="match_parent"
+        android1:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
+        android1:orientation="vertical" 
+        android:gravity="center" >
+
+        <TextView
+            android:id="@+id/question_textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/question_button_selector"
+            android:lines="7"
+            android:padding="5dp"
+            android:text="Pytanie"
+            android1:layout_marginBottom="10dp"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <LinearLayout
+            android1:layout_width="match_parent"
+            android1:layout_height="wrap_content"
+            android1:layout_marginBottom="30dp"
+            android1:orientation="vertical" >
+
+            <LinearLayout
+                android1:layout_width="match_parent"
+                android1:layout_height="wrap_content"
+                android1:gravity="center_horizontal" >
+
+                <ToggleButton
+                    android1:id="@+id/a_answer_button"
+                    style="@style/question_button"
+                    android1:layout_width="wrap_content"
+                    android1:layout_height="wrap_content"
+                    android1:layout_weight="0.5"
+                    android1:lines="2"
+                    android1:textAppearance="?android:attr/textAppearanceSmall"
+                    android1:textOff="odp a"
+                    android1:textOn="odp a" />
+
+                <ToggleButton
+                    android1:id="@+id/b_answer_button"
+                    style="@style/question_button"
+                    android1:layout_width="wrap_content"
+                    android1:layout_height="wrap_content"
+                    android1:layout_weight="0.5"
+                    android1:lines="2"
+                    android1:textAppearance="?android:attr/textAppearanceSmall"
+                    android1:textOff="odp b"
+                    android1:textOn="odp b" />
+            </LinearLayout>
+
+            <LinearLayout
+                android1:layout_width="match_parent"
+                android1:layout_height="wrap_content"
+                android1:gravity="center_horizontal" >
+
+                <ToggleButton
+                    android1:id="@+id/c_answer_button"
+                    style="@style/question_button"
+                    android1:layout_width="wrap_content"
+                    android1:layout_height="wrap_content"
+                    android1:layout_weight="0.5"
+                    android1:lines="2"
+                    android1:textAppearance="?android:attr/textAppearanceSmall"
+                    android1:textOff="odp c"
+                    android1:textOn="odp c" />
+
+                <ToggleButton
+                    android1:id="@+id/d_answer_button"
+                    style="@style/question_button"
+                    android1:layout_width="wrap_content"
+                    android1:layout_height="wrap_content"
+                    android1:layout_weight="0.5"
+                    android1:lines="2"
+                    android1:textAppearance="?android:attr/textAppearanceSmall"
+                    android1:textOff="odp d"
+                    android1:textOn="odp d" />
+            </LinearLayout>
+        </LinearLayout>
+
+         <Button
+	        android:id="@+id/button1"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:text="@string/confirm" />
+        
+    </LinearLayout>
+
+</LinearLayout>
