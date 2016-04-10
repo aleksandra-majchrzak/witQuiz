@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 	
@@ -37,6 +38,11 @@ public class MainActivity extends Activity {
 				
 				EditText usernameExitText = (EditText) findViewById(R.id.username_editText);
 				String userName = usernameExitText.getText().toString();
+				
+				if(userName.isEmpty()){
+					Toast.makeText(MainActivity.this, R.string.set_username, Toast.LENGTH_LONG).show();
+					return;
+				}
 				
 				SharedPreferences shared = getSharedPreferences(SHARED_PREFERENCES, 0);
 				shared.edit()

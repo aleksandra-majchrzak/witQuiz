@@ -18,6 +18,7 @@ import android.widget.Toast;
 import android.widget.ToggleButton;
 
 import com.example.witquiz.R;
+import com.example.witquiz.activities.MainActivity;
 import com.example.witquiz.entities.Answer;
 import com.example.witquiz.entities.Question;
 
@@ -93,6 +94,11 @@ public class QuestionFragment extends Fragment {
 	}
 	
 	private void loadControls(View view){		
+		
+		TextView userNameTextView = (TextView) view.findViewById(R.id.username_name_textView);
+		String userName = this.getActivity().getSharedPreferences(MainActivity.SHARED_PREFERENCES, 0).getString("CurrentUser", "");
+		
+		userNameTextView.setText(String.format(getResources().getString(R.string.username), userName));
 		
 		TextView categoryTextView = (TextView) view.findViewById(R.id.category_name_textView);
 		categoryTextView.setText(categoryName);

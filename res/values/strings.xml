@@ -31,4 +31,6 @@
     <string name="question_nr">Pytanie nr %d</string>
     <string name="game_end">%s! \n Aby rozpocząć nową grę, naciśnij OK.</string>
 	<string name="OK">OK</string>
+	<string name="set_username">Wpisz nazwę użytkownika</string>
+	<string name="username">Użytkownik: %s</string>
 </resources>
