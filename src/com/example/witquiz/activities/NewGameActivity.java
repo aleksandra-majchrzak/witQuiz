@@ -3,6 +3,7 @@ package com.example.witquiz.activities;
 import com.example.witquiz.R;
 import com.example.witquiz.databasemanager.DatabaseManager;
 import com.example.witquiz.entities.Category;
+import com.example.witquiz.entities.Question;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -75,8 +76,11 @@ public class NewGameActivity extends Activity {
 			
 				Category selectedCategory = (Category) categorySpinner.getSelectedItem();
 				
+				Question[] questions = DatabaseManager.getQuestionsForCategory(selectedCategory.getId());
+				
 				Intent intent = new Intent(NewGameActivity.this, QuestionActivity.class);
-				intent.putExtra("CategoryId", selectedCategory.getId());
+				intent.putExtra("category", selectedCategory.getName());
+				intent.putExtra("questions", questions);
 				startActivity(intent);
 				
 			}

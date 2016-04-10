@@ -30,7 +30,7 @@ public class DatabaseHelper {
 	
 	public static void close(){
 		
-		if(database.isOpen())
+		if(database != null && database.isOpen())
 			database.close();
 		
 		dbOpenHelper = null;

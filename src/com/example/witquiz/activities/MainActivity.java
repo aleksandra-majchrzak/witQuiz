@@ -52,8 +52,9 @@ public class MainActivity extends Activity {
     
     @Override
     protected void onDestroy() {
-        super.onDestroy();
-        DatabaseHelper.close();
+    	DatabaseHelper.close();
+    	
+        super.onDestroy();        
     }
     
     private void setupDbEnv() {

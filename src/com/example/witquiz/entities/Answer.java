@@ -1,6 +1,9 @@
 package com.example.witquiz.entities;
 
-public class Answer {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+public class Answer implements Parcelable{
 
 	private int id;
 	private int questionId;
@@ -10,6 +13,13 @@ public class Answer {
 		this.id = id;
 		this.questionId = questionId;
 		this.answer = answer;
+	}
+
+	public Answer(Parcel in) {
+		
+		this.id = in.readInt();
+		this.questionId = in.readInt();
+		this.answer = in.readString();
 	}
 
 	public int getId() {
@@ -35,6 +45,32 @@ public class Answer {
 	public void setAnswer(String answer) {
 		this.answer = answer;
 	}
+
+	@Override
+	public int describeContents() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public void writeToParcel(Parcel dest, int flags) {
+		
+		dest.writeInt(this.id);
+		dest.writeInt(this.questionId);
+		dest.writeString(this.answer);
+		
+	}
 	
-	
+	public static final Parcelable.Creator<Answer> CREATOR =
+            new Parcelable.Creator<Answer>() {
+
+        public Answer createFromParcel(Parcel in) {
+            return new Answer(in);
+        }
+
+        public Answer[] newArray(int size) {
+            return new Answer[size];
+        }
+    };
+    
 }

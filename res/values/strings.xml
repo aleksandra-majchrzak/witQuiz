@@ -19,5 +19,14 @@
     <string name="next">Dalej</string>
     <string name="confirm">Zatwierdź</string>
     <string name="category">Kategoria</string>
+    <array name="answers_array">
+        <item>A) %s</item>
+        <item>B) %s</item>
+        <item>C) %s</item>
+        <item>D) %s</item>
+    </array>
+    <string name="end_of_game">Koniec gry</string>
+    <string name="won">WYGRAŁEŚ</string>
+    <string name="lost">PRZEGRAŁEŚ</string>
 
 </resources>
