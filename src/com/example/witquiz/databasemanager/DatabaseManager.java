@@ -11,12 +11,17 @@ import android.database.Cursor;
 
 public class DatabaseManager {
 	
-	public static Category[] getAllCategories(){
+	public static Category[] getAllCategories(boolean onlyWithQuestions){
 		Cursor cursor = null;
 		List<Category> categories;
 		
+		String mainQuery = "SELECT * FROM Categories ";
+		
+		if(onlyWithQuestions)
+			mainQuery += " WHERE (SELECT COUNT(*) FROM Questions WHERE CategoryId = Categories.Id) > 0";
+		
 		try{
-			cursor = DatabaseHelper.getDatabaseInstance().rawQuery("SELECT * FROM Categories", null);
+			cursor = DatabaseHelper.getDatabaseInstance().rawQuery(mainQuery, null);
 			
 			if(cursor.getCount()==0)
 				return new Category[0];

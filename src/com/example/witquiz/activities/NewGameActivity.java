@@ -30,7 +30,7 @@ public class NewGameActivity extends Activity {
 		
 		final Spinner categorySpinner = (Spinner) findViewById(R.id.choose_category_spinner);
 		
-		Category[] categories = DatabaseManager.getAllCategories();
+		Category[] categories = DatabaseManager.getAllCategories(true);
 		
 		categorySpinner.setAdapter(new ArrayAdapter<Category>(this, R.layout.simple_row, categories){
 			
