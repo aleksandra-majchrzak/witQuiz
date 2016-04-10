@@ -79,7 +79,7 @@ public class NewGameActivity extends Activity {
 				Question[] questions = DatabaseManager.getQuestionsForCategory(selectedCategory.getId());
 				
 				Intent intent = new Intent(NewGameActivity.this, QuestionActivity.class);
-				intent.putExtra("category", selectedCategory.getName());
+				intent.putExtra("categoryName", selectedCategory.getName());
 				intent.putExtra("questions", questions);
 				startActivity(intent);
 				

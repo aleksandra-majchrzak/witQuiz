@@ -20,10 +20,12 @@ public class QuestionFragment extends Fragment {
 
 	private TextView questionTextView;
 	private ToggleButton[] answerButtons;
+	TextView questionNrTextView;
 	private Question[] questions;
 	int currentQuestionIndex = 0;
 	private int checkedIndex = -1;
 	Button confirmButton;
+	String categoryName;
 	
 	public QuestionFragment() {
 	}
@@ -39,6 +41,7 @@ public class QuestionFragment extends Fragment {
 			questions = (Question[]) savedInstanceState.getParcelableArray("questions");
 			currentQuestionIndex = savedInstanceState.getInt("questionIndex");
 			checkedIndex = savedInstanceState.getInt("checked");
+			categoryName = savedInstanceState.getString("categoryName");
 		}
 		else{
 			Parcelable[] parcelables =  this.getArguments().getParcelableArray("questions");
@@ -47,6 +50,7 @@ public class QuestionFragment extends Fragment {
 			System.arraycopy(parcelables, 0, questions, 0, parcelables.length);
 			
 			checkedIndex = -1;
+			categoryName = this.getArguments().getString("categoryName");
 		}
 		
 		loadControls(rootView);
@@ -78,11 +82,17 @@ public class QuestionFragment extends Fragment {
 		outState.putParcelableArray("questions", questions);
 		outState.putInt("questionIndex", currentQuestionIndex);
 		outState.putInt("checked", checkedIndex);
+		outState.putString("categoryName", categoryName);
 		
 		super.onSaveInstanceState(outState);
 	}
 	
 	private void loadControls(View view){		
+		
+		TextView categoryTextView = (TextView) view.findViewById(R.id.category_name_textView);
+		categoryTextView.setText(categoryName);
+		
+		questionNrTextView = (TextView) view.findViewById(R.id.question_number_textView);
 		
 		questionTextView = (TextView) view.findViewById(R.id.question_textView);		
 		
@@ -198,6 +208,8 @@ public class QuestionFragment extends Fragment {
 	}
 	
 	private void loadControlsText(){
+		
+		questionNrTextView.setText(String.format(getResources().getString(R.string.question_nr), currentQuestionIndex +1));
 		
 		Question question = questions[currentQuestionIndex];
 		Answer[] answers = question.getAnswers();
