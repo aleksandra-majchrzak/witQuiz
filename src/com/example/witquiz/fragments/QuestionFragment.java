@@ -1,12 +1,17 @@
 package com.example.witquiz.fragments;
 
+import android.app.AlertDialog;
+import android.app.AlertDialog.Builder;
+import android.app.Dialog;
 import android.app.Fragment;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -261,15 +266,42 @@ public class QuestionFragment extends Fragment {
 	
 	private boolean endOfGame(boolean success){
 		
-		if(success)
+		String endText= getResources().getString(R.string.game_end);
+		
+		if(success){
+			endText = String.format(endText, getResources().getString(R.string.won));
 			confirmButton.setText(R.string.won);
-		else
+			
+		} else{
+			endText = String.format(endText, getResources().getString(R.string.lost));
 			confirmButton.setText(R.string.lost);
+			
+		}
 		
 		for(ToggleButton button : answerButtons)
 			button.setEnabled(false);
 		
-		confirmButton.setEnabled(false);
+		confirmButton.setEnabled(false);		
+		
+		TextView endTextView = (TextView) getActivity().getLayoutInflater().inflate(R.layout.end_game_dialog, null);
+		endTextView.setText(endText);
+		
+		AlertDialog.Builder builder = new Builder(this.getActivity());
+		
+		builder.setView(endTextView)
+		.setPositiveButton(R.string.OK, new DialogInterface.OnClickListener(){
+
+			@Override
+			public void onClick(DialogInterface dialog, int which) {
+				QuestionFragment.this.getActivity().finish();
+				
+			}
+			
+		});
+		
+		Dialog dialog = builder.create();
+		dialog.setCancelable(false);
+		dialog.show();
 		
 		return success;
 	}
