@@ -30,6 +30,10 @@ public class Question implements Parcelable{
 		this.answerId = in.readInt();
 	}
 
+	public Question() {
+		this.answers = new Answer[4];
+	}
+
 	public int getId() {
 		return id;
 	}

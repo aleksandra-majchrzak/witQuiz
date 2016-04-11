@@ -19,18 +19,32 @@
     <string name="next">Dalej</string>
     <string name="confirm">Zatwierdź</string>
     <string name="category">Kategoria</string>
+
     <array name="answers_array">
         <item>A) %s</item>
         <item>B) %s</item>
         <item>C) %s</item>
         <item>D) %s</item>
     </array>
+
     <string name="end_of_game">Koniec gry</string>
     <string name="won">WYGRAŁEŚ</string>
     <string name="lost">PRZEGRAŁEŚ</string>
     <string name="question_nr">Pytanie nr %d</string>
     <string name="game_end">%s! \n Aby rozpocząć nową grę, naciśnij OK.</string>
-	<string name="OK">OK</string>
-	<string name="set_username">Wpisz nazwę użytkownika</string>
-	<string name="username">Użytkownik: %s</string>
+    <string name="OK">OK</string>
+    <string name="set_username">Wpisz nazwę użytkownika</string>
+    <string name="username">Użytkownik: %s</string>
+    <string name="title_activity_category">CategoryActivity</string>
+    <string name="title_activity_edit_question">EditQuestionActivity</string>
+    <string name="add_new_question">Dodaj nowe</string>
+    <string name="save_question">Zapisz pytanie</string>
+    <string name="delete_question">Usuń pytanie</string>
+    <string name="edit_question">Edytuj pytanie</string>
+    <string name="category_name_exists">Kategoria o tej nazwie już istnieje</string>
+    <string name="category_name_cannot_be_empty">Nazwa kategorii nie może byc pusta</string>
+    <string name="do_you_want_to_delete_question">Czy na pewno chcesz usunąć to pytanie?</string>
+    <string name="no">Nie</string>
+    <string name="no_categories_to_edit">Brak kategorii fo edycji</string>
+
 </resources>

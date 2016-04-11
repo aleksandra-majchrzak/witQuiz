@@ -44,6 +44,14 @@
             android:name=".activities.QuestionActivity"
             android:label="@string/app_name" >
         </activity>
+        <activity
+            android:name=".activities.CategoryActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.example.witquiz.activities.EditQuestionActivity"
+            android:label="@string/edit_question" >
+        </activity>
     </application>
 
 </manifest>

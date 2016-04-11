@@ -21,13 +21,13 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper{
 	public void onCreate(SQLiteDatabase db) {
 		
 		db.execSQL("CREATE TABLE Categories( " +
-				"Id INT NOT NULL, " +
+				"Id INTEGER NOT NULL, " +
 				"Name NVARCHAR(100) NOT NULL, " +
 				"PRIMARY KEY (Id)" +
 				");");
 		
 		db.execSQL("CREATE TABLE Questions( " +
-				"Id INT NOT NULL, " +
+				"Id INTEGER NOT NULL, " +
 				"CategoryId INT NOT NULL, " +
 				"Question NVARCHAR(100) NOT NULL, " +
 				"AnswerId INT NOT NULL, " +
@@ -35,20 +35,20 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper{
 				");");
 		
 		db.execSQL("CREATE TABLE Answers( " +
-				"Id INT NOT NULL, " +
+				"Id INTEGER NOT NULL, " +
 				"QuestionId INT NOT NULL, " +
 				"Answer NVARCHAR(100) NOT NULL, " +
 				"PRIMARY KEY (Id) " +
 				");");
 		
 		db.execSQL("CREATE TABLE Users( " +
-				"Id INT NOT NULL, " +
+				"Id INTEGER NOT NULL, " +
 				"Name NVARCHAR(100) NOT NULL, " +
 				"PRIMARY KEY (Id) " +
 				");");
 		
 		db.execSQL("CREATE TABLE HighScores( " +
-				"UserId INT NOT NULL, " +
+				"UserId INTEGER NOT NULL, " +
 				"HighScore INT NOT NULL, " +
 				"PRIMARY KEY (UserId) " +
 				");");

@@ -76,7 +76,7 @@ public class NewGameActivity extends Activity {
 			
 				Category selectedCategory = (Category) categorySpinner.getSelectedItem();
 				
-				Question[] questions = DatabaseManager.getQuestionsForCategory(selectedCategory.getId());
+				Question[] questions = DatabaseManager.getGameQuestionsForCategory(selectedCategory.getId());
 				
 				Intent intent = new Intent(NewGameActivity.this, QuestionActivity.class);
 				intent.putExtra("categoryName", selectedCategory.getName());
