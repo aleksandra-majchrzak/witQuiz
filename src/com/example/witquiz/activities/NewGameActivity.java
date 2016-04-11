@@ -15,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class NewGameActivity extends Activity {
 
@@ -73,6 +74,11 @@ public class NewGameActivity extends Activity {
 			
 			@Override
 			public void onClick(View v) {
+				
+				if(categorySpinner.getCount() == 0){
+					Toast.makeText(NewGameActivity.this, R.string.no_categories_to_choose, Toast.LENGTH_LONG).show();
+					return;
+				}
 			
 				Category selectedCategory = (Category) categorySpinner.getSelectedItem();
 				

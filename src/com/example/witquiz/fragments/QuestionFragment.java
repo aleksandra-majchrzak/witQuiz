@@ -175,10 +175,10 @@ public class QuestionFragment extends Fragment {
 						for(ToggleButton button : answerButtons)
 							button.setEnabled(false);
 						
+						((Button)v).setText(R.string.next);
+						
 						if(! markAnswers(checkedAnswerId, answerIndex))
 							return;
-						
-						((Button)v).setText(R.string.next);
 						
 					}
 					else{
@@ -246,6 +246,9 @@ public class QuestionFragment extends Fragment {
 		if(checkedAnswerId == question.getAnswerId()){
 			answerButtons[answerIndex]
 					.setBackground(getResources().getDrawable(R.drawable.question_button_ok_selector));
+			
+			if(currentQuestionIndex == questions.length -1)
+				endOfGame(true);
 			
 			return true;
 		}

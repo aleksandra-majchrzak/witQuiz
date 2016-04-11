@@ -45,6 +45,7 @@
     <string name="category_name_cannot_be_empty">Nazwa kategorii nie może byc pusta</string>
     <string name="do_you_want_to_delete_question">Czy na pewno chcesz usunąć to pytanie?</string>
     <string name="no">Nie</string>
-    <string name="no_categories_to_edit">Brak kategorii fo edycji</string>
+    <string name="no_categories_to_edit">Brak kategorii do edycji</string>
+    <string name="no_categories_to_choose">Brak kategorii do wyboru. Dodaj nową kategorię.</string>
 
 </resources>
