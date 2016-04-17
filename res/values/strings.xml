@@ -47,5 +47,8 @@
     <string name="no">Nie</string>
     <string name="no_categories_to_edit">Brak kategorii do edycji</string>
     <string name="no_categories_to_choose">Brak kategorii do wyboru. Dodaj nową kategorię.</string>
+    <string name="game_summary">Statystyka</string>
+    <string name="questions_answered">Pytań zaliczonych: %d</string>
+    <string name="questions_left">Pytań do końca: %d</string>
 
 </resources>

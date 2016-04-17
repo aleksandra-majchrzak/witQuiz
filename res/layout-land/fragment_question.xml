@@ -1,138 +1,143 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:android1="http://schemas.android.com/apk/res/android"
-    android:id="@+id/LinearLayout1"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android1:id="@+id/question_scrollView"
+    android1:layout_width="match_parent"
+    android1:layout_height="match_parent"
     android:layout_marginLeft="30dp"
-    android:layout_marginRight="30dp"
-    android:gravity="center_horizontal"
-    android:orientation="vertical"
-    tools:context="com.example.witquiz.QuestionActivity$PlaceholderFragment" >
-    
-    <TextView
-        android:id="@+id/username_name_textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/username"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+    android:layout_marginRight="30dp" >
 
     <LinearLayout
-        android:id="@+id/question_top_ll"
+        android:id="@+id/LinearLayout1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp" 
-        android:layout_marginTop="10dp">
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:context="com.example.witquiz.QuestionActivity$PlaceholderFragment" >
 
         <TextView
-            android:id="@+id/category_name_textView"
-            android:layout_width="0dp"
+            android:id="@+id/username_name_textView"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:gravity="left"
-            android:text="@string/category"
+            android:text="@string/username"
             android:textAppearance="?android:attr/textAppearanceMedium" />
-
-        <TextView
-            android:id="@+id/question_number_textView"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:gravity="right"
-            android:text="Pytanie nr 1"
-            android:textAppearance="?android:attr/textAppearanceMedium" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/central_ll"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:orientation="horizontal" 
-        android:gravity="center" >
-
-        <TextView
-            android:id="@+id/question_textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:layout_marginRight="10dp"
-            android:background="@drawable/question_button_selector"
-            android:minLines="7"
-            android:padding="5dp"
-            android:text="Pytanie"
-            android:gravity="center"
-            android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <LinearLayout
+            android:id="@+id/question_top_ll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:orientation="vertical" >
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp" >
+
+            <TextView
+                android:id="@+id/category_name_textView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:gravity="left"
+                android:text="@string/category"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <TextView
+                android:id="@+id/question_number_textView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:gravity="right"
+                android:text="Pytanie nr 1"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/central_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:id="@+id/question_textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.5"
+                android:background="@drawable/question_button_selector"
+                android:gravity="center"
+                android:minLines="7"
+                android:padding="5dp"
+                android:text="Pytanie"
+                android:textAppearance="?android:attr/textAppearanceSmall" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center" >
+                android:layout_weight="0.5"
+                android:orientation="vertical" >
 
-                <ToggleButton
-                    android:id="@+id/a_answer_button"
-                    style="@style/question_button"
-                    android:layout_width="0dp"
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:minLines="2"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textOff="odp a"
-                    android:textOn="odp a" />
+                    android:gravity="center" >
 
-                <ToggleButton
-                    android:id="@+id/b_answer_button"
-                    style="@style/question_button"
-                    android:layout_width="0dp"
+                    <ToggleButton
+                        android:id="@+id/a_answer_button"
+                        style="@style/question_button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:minLines="2"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textOff="odp a"
+                        android:textOn="odp a" />
+
+                    <ToggleButton
+                        android:id="@+id/b_answer_button"
+                        style="@style/question_button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:minLines="2"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textOff="odp b"
+                        android:textOn="odp b" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:minLines="2"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textOff="odp b"
-                    android:textOn="odp b" />
-            </LinearLayout>
+                    android:gravity="center" >
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center" >
+                    <ToggleButton
+                        android:id="@+id/c_answer_button"
+                        style="@style/question_button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:minLines="2"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textOff="odp c"
+                        android:textOn="odp c" />
 
-                <ToggleButton
-                    android:id="@+id/c_answer_button"
-                    style="@style/question_button"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:minLines="2"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textOff="odp c"
-                    android:textOn="odp c" />
-
-                <ToggleButton
-                    android:id="@+id/d_answer_button"
-                    style="@style/question_button"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="0.5"
-                    android:minLines="2"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:textOff="odp d"
-                    android:textOn="odp d" />
+                    <ToggleButton
+                        android:id="@+id/d_answer_button"
+                        style="@style/question_button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="0.5"
+                        android:minLines="2"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:textOff="odp d"
+                        android:textOn="odp d" />
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
-     
-    </LinearLayout>
-    
-    <Button
-	        android:id="@+id/confirm_button"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:text="@string/confirm" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/confirm_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/confirm" />
+    </LinearLayout>
+
+</ScrollView>

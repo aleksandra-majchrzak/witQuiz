@@ -1,5 +1,6 @@
 package com.example.witquiz.fragments;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
 import android.app.Dialog;
@@ -11,7 +12,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.View.OnClickListener;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,6 +24,7 @@ import com.example.witquiz.entities.Question;
 
 public class QuestionFragment extends Fragment {
 
+	SendSummaryInterface mCallback;
 	private TextView questionTextView;
 	private ToggleButton[] answerButtons;
 	TextView questionNrTextView;
@@ -34,6 +35,10 @@ public class QuestionFragment extends Fragment {
 	String categoryName;
 	
 	public QuestionFragment() {
+	}
+	
+	public interface SendSummaryInterface{
+		public void sendSummary(int allQuestions, int currentQuestion);
 	}
 
 	@Override
@@ -93,6 +98,26 @@ public class QuestionFragment extends Fragment {
 		super.onSaveInstanceState(outState);
 	}
 	
+	@Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+        
+        // This makes sure that the container activity has implemented
+        // the callback interface. If not, it throws an exception
+        try {
+            mCallback = (SendSummaryInterface) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString()
+                    + " must implement OnHeadlineSelectedListener");
+        }
+    }
+	
+	@Override
+	public void onDestroyView() {		
+		mCallback = null;
+		super.onDestroyView();
+	}
+	
 	private void loadControls(View view){		
 		
 		TextView userNameTextView = (TextView) view.findViewById(R.id.username_name_textView);
@@ -114,6 +139,7 @@ public class QuestionFragment extends Fragment {
 		answerButtons[2] = (ToggleButton) view.findViewById(R.id.c_answer_button);
 		answerButtons[3] = (ToggleButton) view.findViewById(R.id.d_answer_button);
 		
+        mCallback.sendSummary(questions.length, currentQuestionIndex);
 		loadControlsText();
 		
 		for(int i = 0; i<4 ;++i){
@@ -210,6 +236,7 @@ public class QuestionFragment extends Fragment {
 						button.setBackground(getResources().getDrawable(R.drawable.question_button_selector));
 					}
 					
+					mCallback.sendSummary(questions.length, currentQuestionIndex);
 					loadControlsText();
 				}
 				
