@@ -19,6 +19,7 @@ import android.widget.ToggleButton;
 
 import com.example.witquiz.R;
 import com.example.witquiz.activities.MainActivity;
+import com.example.witquiz.databasemanager.DatabaseManager;
 import com.example.witquiz.entities.Answer;
 import com.example.witquiz.entities.Question;
 
@@ -300,7 +301,7 @@ public class QuestionFragment extends Fragment {
 		
 	}
 	
-	private boolean endOfGame(boolean success){
+	private boolean endOfGame(final boolean success){
 		
 		String endText= getResources().getString(R.string.game_end);
 		
@@ -330,6 +331,14 @@ public class QuestionFragment extends Fragment {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				QuestionFragment.this.getActivity().finish();
+				
+				String userName = QuestionFragment.this.getActivity()
+									.getSharedPreferences(MainActivity.SHARED_PREFERENCES, 0).getString("CurrentUser", "");
+				
+				if(success)
+					currentQuestionIndex++;
+				
+				DatabaseManager.saveHighScore(userName, currentQuestionIndex);
 				
 			}
 			

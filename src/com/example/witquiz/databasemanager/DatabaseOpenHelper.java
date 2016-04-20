@@ -48,9 +48,9 @@ public class DatabaseOpenHelper extends SQLiteOpenHelper{
 				");");
 		
 		db.execSQL("CREATE TABLE HighScores( " +
-				"UserId INTEGER NOT NULL, " +
+				"UserName NVARCHAR(100) NOT NULL, " +
 				"HighScore INT NOT NULL, " +
-				"PRIMARY KEY (UserId) " +
+				"PRIMARY KEY (UserName) " +
 				");");
 		
 	}

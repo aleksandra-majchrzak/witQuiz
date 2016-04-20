@@ -89,15 +89,9 @@ public class CreatorActivity extends Activity {
 		newCategoryEditText = (EditText) findViewById(R.id.new_category_editText);
 		nextButton = (Button) findViewById(R.id.creator_next_button);
 		
-		if(editCategoryRadio.isChecked())
-			categorySpinner.setEnabled(true);
-		else
-			categorySpinner.setEnabled(false);
-		
-		if(newCategoryRadio.isChecked())
-			newCategoryEditText.setEnabled(true);
-		else
-			newCategoryEditText.setEnabled(false);
+		categorySpinner.setEnabled(editCategoryRadio.isChecked());
+		newCategoryEditText.setEnabled(newCategoryRadio.isChecked());
+
 		
 		editCategoryRadio.setOnCheckedChangeListener(new OnCheckedChangeListener() {
 			

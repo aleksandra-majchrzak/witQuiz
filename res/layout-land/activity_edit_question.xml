@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
             android:ems="10"
-            android:inputType="textMultiLine"
+            android:inputType="textMultiLine|textCapSentences"
             android:lines="6" />
 
         <RadioGroup
@@ -57,7 +57,7 @@
 	                android:layout_width="0dp"
 	                android:layout_height="wrap_content"
 	                android:layout_weight="1"
-	                android:inputType="textPersonName" />
+	                android:inputType="textCapSentences" />
         	</LinearLayout>
 
             <LinearLayout
@@ -76,7 +76,7 @@
 	                android:layout_width="0dp"
 	                android:layout_height="wrap_content"
 	                android:layout_weight="1"
-	                android:inputType="textPersonName" />
+	                android:inputType="textCapSentences" />
             
             </LinearLayout>
 
@@ -96,7 +96,7 @@
 	                android:layout_width="0dp"
 	                android:layout_height="wrap_content"
 	                android:layout_weight="1"
-	                android:inputType="textPersonName" />
+	                android:inputType="textCapSentences" />
             
             </LinearLayout>
             
@@ -116,7 +116,7 @@
 	                android:layout_width="0dp"
 	                android:layout_height="wrap_content"
 	                android:layout_weight="1"
-	                android:inputType="textPersonName" />
+	                android:inputType="textCapSentences" />
             </LinearLayout>
             
         </RadioGroup>s

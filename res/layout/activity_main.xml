@@ -14,8 +14,9 @@
         android:id="@+id/username_editText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" 
-        android:hint="@string/write_username">
-
+        android:hint="@string/write_username"
+		android:inputType="textCapSentences">
+    
         <requestFocus />
     </EditText>
 

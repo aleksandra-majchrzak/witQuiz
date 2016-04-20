@@ -252,4 +252,39 @@ public class DatabaseManager {
 		}
 
 	}
+	
+	public static void saveHighScore(String userName, int highScore){
+		ContentValues values = new ContentValues();
+		
+		values.put("UserName", userName);
+		values.put("HighScore", highScore);
+			
+		Cursor cursor = null;
+		
+		try{
+			cursor = DatabaseHelper.getDatabaseInstance().rawQuery("SELECT HighScore FROM HighScores WHERE UserName = ?", 
+				new String[]{userName} );
+			
+			if(cursor.moveToNext()){
+				
+				if(highScore > CursorHelper.getInt(cursor, "HighScore"))
+					DatabaseHelper.getDatabaseInstance().update("HighScores", values, "UserName = ?", new String[]{userName});
+			
+			}
+			else{
+				DatabaseHelper.getDatabaseInstance().insert("HighScores", null, values);
+			}
+		
+		} finally{
+			if(cursor != null)
+				cursor.close();
+		}
+	}
+	
+	public static Cursor getHighScores(){
+		return  DatabaseHelper.getDatabaseInstance()
+				.rawQuery("SELECT rowid AS _id, scores.UserName, scores.HighScore " +
+						"FROM HighScores scores ORDER BY scores.HighScore DESC ",
+							null);
+	}
 }
