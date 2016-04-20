@@ -50,7 +50,7 @@ public class DatabaseManager {
 		
 		try{
 			cursor = DatabaseHelper.getDatabaseInstance().rawQuery(
-					"SELECT q.Id, q.Question, q.AnswerId FROM Questions q WHERE q.CategoryId = ? ORDER BY RANDOM() LIMIT 10"
+					"SELECT q.Id, q.Question, q.AnswerId FROM Questions q WHERE q.CategoryId = ? ORDER BY RANDOM()"
 						, new String[]{ String.valueOf(categoryId) } );
 			
 			if(cursor.getCount()==0)
